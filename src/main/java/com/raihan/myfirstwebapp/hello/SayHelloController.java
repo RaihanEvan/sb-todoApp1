@@ -27,5 +27,10 @@ public class SayHelloController {
                 "</html>");
         return stringBuffer.toString();
     }
+    @RequestMapping("say-hello-jsp")    //url mapping to the link
+    //@ResponseBody
+    public String sayHelloJsp(){
+        return "sayHello";
+    }
 
 }

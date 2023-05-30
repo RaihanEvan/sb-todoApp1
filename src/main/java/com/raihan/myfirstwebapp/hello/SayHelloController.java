@@ -3,8 +3,9 @@ package com.raihan.myfirstwebapp.hello;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-
+//@RestController
 @Controller //is a controller/web api class
 public class SayHelloController {
     @RequestMapping("say-hello")    //url mapping to the link
@@ -27,10 +28,15 @@ public class SayHelloController {
                 "</html>");
         return stringBuffer.toString();
     }
-    @RequestMapping(path="/say-hello-jsp")    //url mapping to the link
+    @RequestMapping("say-hello-jsp")    //url mapping to the link
     //@ResponseBody
     public String sayHelloJsp(){
         return "sayHello";
     }
+//    @RequestMapping("login")    //url mapping to the link
+//    //@ResponseBody
+//    public String loginJsp(){
+//        return "login";
+//    }
 
 }

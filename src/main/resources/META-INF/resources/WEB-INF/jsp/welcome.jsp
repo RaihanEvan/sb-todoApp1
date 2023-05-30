@@ -8,7 +8,7 @@
     Looking for Something???
 <div>
 	Name: ${name}
-	Passwword: ${pass}
+	Password: ${pass}
 </div>
 </body>
 </html>

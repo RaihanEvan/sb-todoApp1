@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class LoginController {
+	private AuthenticationService as;
+	
+	
 //	@RequestMapping("login")
 //	public String loginJsp() {
 //		return "login";
@@ -17,6 +20,11 @@ public class LoginController {
 //	}
 //	private Logger logger = LoggerFactory.getLogger(getClass());
 	
+	public LoginController(AuthenticationService as) {
+		super();
+		this.as = as;
+	}
+
 	@RequestMapping(value="login",method=RequestMethod.GET)
 	public String gotoLoginPage() {
 //		@RequestParam String name, ModelMap model
@@ -25,10 +33,15 @@ public class LoginController {
 //		System.out.println("Request param is "+name);
 		return "login";
 	}
+	
 	@RequestMapping(value="login",method=RequestMethod.POST)
 	public String gotoWelcomePage(@RequestParam String name,@RequestParam String pass, ModelMap model) {
-		model.put("name",name);
-		model.put("pass",pass);
-		return "welcome";
+			if(as.authenticate(name,pass)) {
+			model.put("name",name);
+			model.put("pass",pass);
+			return "welcome";
+		}
+	return "login";
+
 	}
 }

@@ -38,9 +38,9 @@ public class LoginController {
 	public String gotoWelcomePage(@RequestParam String name,@RequestParam String pass, ModelMap model) {
 			if(as.authenticate(name,pass)) {
 			model.put("name",name);
-			model.put("pass",pass);
 			return "welcome";
 		}
+	model.put("errorMessage","Invalid Credentials");
 	return "login";
 
 	}

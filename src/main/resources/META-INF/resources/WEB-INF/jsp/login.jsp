@@ -3,7 +3,8 @@
 <title> Login Page </title>  
 </head>    
 <body>    
-    <center> <h1> Login Page for ${name} </h1> </center>   
+    <center> <h1> Login Page for ${name} </h1> </center>  
+    <pre>${errorMessage }</pre> 
     <form method="post">  
         <div class="container">   
             <label>Username : </label>   

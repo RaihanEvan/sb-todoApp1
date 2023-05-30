@@ -1,7 +1,7 @@
 package com.raihan.myfirstwebapp.login;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +26,9 @@ public class LoginController {
 		return "login";
 	}
 	@RequestMapping(value="login",method=RequestMethod.POST)
-	public String gotoWelcomePage() {
+	public String gotoWelcomePage(@RequestParam String name,@RequestParam String pass, ModelMap model) {
+		model.put("name",name);
+		model.put("pass",pass);
 		return "welcome";
 	}
 }

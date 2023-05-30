@@ -5,6 +5,10 @@
     <title>WELCOME Page</title>
 </head>
 <body>
-    Looking for Something???Again
+    Looking for Something???
+<div>
+	Name: ${name}
+	Passwword: ${pass}
+</div>
 </body>
 </html>
